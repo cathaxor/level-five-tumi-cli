@@ -1,0 +1,33 @@
+import wave, sys
+
+sys.stdout.reconfigure(encoding='utf-8')
+
+# Open tumi.wav and print total duration
+with wave.open('tumi.wav', 'rb') as wf:
+    frames = wf.getnframes()
+    rate = wf.getframerate()
+    duration = frames / float(rate)
+    print(f"Total duration: {duration:.2f}s ({int(duration//60)}:{int(duration%60):02d})")
+    print(f"Sample rate: {rate}Hz, Channels: {wf.getnchannels()}")
+    print()
+    print("Manual timestamps to verify (listen to the wav and note these):")
+    print("  ~61.0s = 1:01 - Music before Sopne amar")
+    print("  ~67.5s = 1:07 - 'Sopne amar tomar chobi chupti kore ase'")
+    print("  ~74.0s = 1:14 - 'Sokal theke rater seshe thako amar pase'")
+    print("  ~80.0s = 1:20 - 'Ta ta ta tarara...' (1st)")
+    print("  ~86.0s = 1:26 - 'Ta ta ta tarara...' (2nd)")
+    print("  ~92.0s = 1:32 - Music Interlude")
+    print("  ~95.0s = 1:35 - 'Proti rate amader kotha bola'")
+    print("  ~101.0s= 1:41 - 'Tomar sathe hazaro golpo lekha'")
+    print("  ~107.0s= 1:47 - 'Amader angule jot badha'")
+    print("  ~111.0s= 1:51 - 'Amader bhalo laga'")
+    print("  ~116.0s= 1:56 - Guitar Solo")
+    print("  ~141.0s= 2:21 - 'Alo jwole, alo jwole'")
+    print("  ~147.0s= 2:27 - 'Amar mone, amar mone'")
+    print("  ~153.0s= 2:33 - 'Tomar chobi chokher samne eshe bhashe'")
+    print("  ~159.0s= 2:39 - 'Brishti pore, brishti pore'")
+    print("  ~165.0s= 2:45 - 'Thoter majhe golpo jome'")
+    print("  ~171.0s= 2:51 - 'Tomay ami khuji sarakkhon'")
+    print("  ~178.0s= 2:58 - 'Ei amar mon' (1st)")
+    print("  ~183.0s= 3:03 - 'Ei amar mon' (2nd)")
+    print("  ~188.0s= 3:08 - 'Ei amar mon... Tumi'")
